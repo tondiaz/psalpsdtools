@@ -1,4 +1,4 @@
-class PhilippinesRegions:
+class PhRegPrv:
     def __init__(self):
         self.regions = {
             "NCR": [
@@ -111,7 +111,8 @@ class PhilippinesRegions:
                 "Lanao del Sur",
                 "Maguindanao",
                 "Sulu",
-                "Tawi-Tawi"
+                "Tawi-Tawi",
+                "Eight Area Cluster"
             ]
         }
 

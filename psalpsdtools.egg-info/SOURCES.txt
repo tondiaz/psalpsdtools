@@ -1,12 +1,9 @@
 setup.cfg
 setup.py
-psalpsdtools/Binomialdistribution.py
-psalpsdtools/Gaussiandistribution.py
-psalpsdtools/Generaldistribution.py
-psalpsdtools/PhilippinesRegions.py
-psalpsdtools/ProvincesOfRegions.py
+psalpsdtools/Edrw.py
+psalpsdtools/PhRegPrv.py
 psalpsdtools/__init__.py
-psalpsdtools/test.py
+psalpsdtools/usage.py
 psalpsdtools.egg-info/PKG-INFO
 psalpsdtools.egg-info/SOURCES.txt
 psalpsdtools.egg-info/dependency_links.txt
