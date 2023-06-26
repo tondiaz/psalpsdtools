@@ -87,7 +87,7 @@ class PhRegPrv:
                 "Misamis Oriental"
             ],
             "Davao Region": [
-                "Compostela Valley",
+                "Davao de Oro",
                 "Davao del Norte",
                 "Davao del Sur",
                 "Davao Occidental",
