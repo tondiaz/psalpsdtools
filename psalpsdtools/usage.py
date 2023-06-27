@@ -8,6 +8,10 @@ qtr = "Q1"
 baseFolder = "D:/EDRW/Q1"
 # SET S-D FILE NAME
 sdFile = 'SD Q1 2023.xlsm'
+# COMMODITY 08=chicken, 09=duck, etc.
+commcode = '08'
+# Year
+yr = '23'
 
 myedrw = Edrw()
-myedrw.update_sources(regName,qtr,baseFolder,sdFile)
+myedrw.update_sources(regName,qtr,baseFolder,sdFile,commcode,yr)
