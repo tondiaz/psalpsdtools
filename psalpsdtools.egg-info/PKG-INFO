@@ -1,12 +1,12 @@
 Metadata-Version: 2.1
 Name: psalpsdtools
-Version: 0.8
+Version: 0.9
 Summary: PSA-LPSD Tools
 Home-page: https://github.com/tondiaz/psalpsdtools
 Author-email: a.diaziii@psa.gov.ph
 License: MIT
 Description: # psalpsdtools
-        ![LPSD Logo](LPSD%20Logo.png =100x100)
+        ![LPSDLogo_sm](https://github.com/tondiaz/psalpsdtools/assets/3798545/643ce509-132b-47ad-b803-d75a1ffb421a)
         
         _psalpsdtools_ was developed for the processing of PSA’s Livestock and Poultry Statistics Division.
         
@@ -18,7 +18,8 @@ Description: # psalpsdtools
         - Looking-up and copying of values from the Supply-Disposition file
         - Pasting copied values to the EDRW output file
         - Creating output files by province, based on user specified inputs including:
-        	- region
+        
+          	- region
         	- commodity
         	- year
         
@@ -69,9 +70,9 @@ Description: # psalpsdtools
         
         # Contribute
         
-        Issue Tracker: github.com/psalpsdtools/psalpsdtools/issues
+        Issue Tracker: [github.com/psalpsdtools/psalpsdtools/issues](github.com/psalpsdtools/psalpsdtools/issues)
         
-        Source Code: github.com/psalpsdtools/psalpsdtools
+        Source Code: [github.com/psalpsdtools/psalpsdtools](github.com/psalpsdtools/psalpsdtools)
         
         # Support
         
@@ -80,5 +81,6 @@ Description: # psalpsdtools
         # License
         
         The project is licensed under the MIT license.
+        
 Platform: UNKNOWN
 Description-Content-Type: text/markdown

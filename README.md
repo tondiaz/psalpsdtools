@@ -29,28 +29,28 @@ from psalpsdtools import Edrw
 
 # Specify Region
 
-regName = “Caraga”
+regName = 'Caraga'
 
 # Specify quarter, this used in identifying which worksheet to paste the copied values from the S-D file..
 
-qtr = “Q1”
+qtr = 'Q1'
 
 # Specify folder location of Sources and Final files, the S-D file should also be found here.
 
-baseFolder = “D:/EDRW/Q1”
+baseFolder = 'D:/EDRW/Q1'
 
 # Specify S-D filename
 # IMPORTANT! Only .xlsm or .xlsx extensions are accepted
 
-sdFile = ‘SD Q1 2023.xlsm’
+sdFile = 'SD Q1 2023.xlsm'
 
 # Commodity code i.e. 08=chicken, 09=duck, etc.
 
-commcode = ‘08’
+commcode = '08'
 
 # Year
 
-yr = ‘23’
+yr = '23'
 
 # Call an instance of the Edrw package
 
@@ -69,7 +69,7 @@ Source Code: [github.com/psalpsdtools/psalpsdtools](github.com/psalpsdtools/psal
 
 # Support
 
-If you are having issues, please let us know. We have a mailing list located at: a.diaziii@psa.gov.ph
+If you are having issues, please let us know. We have a mailing list located at: [a.diaziii@psa.gov.ph](mailto:a.diaziii@psa.gov.ph)
 
 # License
 
