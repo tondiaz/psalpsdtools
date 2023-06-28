@@ -1,5 +1,5 @@
 # psalpsdtools
-![LPSD Logo](https://github.com/tondiaz/psalpsdtools/blob/8f8e5080789855dc64f1247735d229ff7c5314fd/LPSD%20Logo.png =100x100)
+![LPSD Logo](LPSD%20Logo.png =100x100)
 
 _psalpsdtools_ was developed for the processing of PSA’s Livestock and Poultry Statistics Division.
 
@@ -11,7 +11,8 @@ Some of the features include:
 - Looking-up and copying of values from the Supply-Disposition file
 - Pasting copied values to the EDRW output file
 - Creating output files by province, based on user specified inputs including:
-	- region
+
+  	- region
 	- commodity
 	- year
 
@@ -62,9 +63,9 @@ myedrw.update_sources(regName,qtr,baseFolder,sdFile,commcode,yr)
 
 # Contribute
 
-Issue Tracker: github.com/psalpsdtools/psalpsdtools/issues
+Issue Tracker: [github.com/psalpsdtools/psalpsdtools/issues](github.com/psalpsdtools/psalpsdtools/issues)
 
-Source Code: github.com/psalpsdtools/psalpsdtools
+Source Code: [github.com/psalpsdtools/psalpsdtools](github.com/psalpsdtools/psalpsdtools)
 
 # Support
 
