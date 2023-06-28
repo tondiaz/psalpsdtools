@@ -61,10 +61,6 @@ Issue Tracker: [github.com/psalpsdtools/psalpsdtools/issues](github.com/psalpsdt
 
 Source Code: [github.com/psalpsdtools/psalpsdtools](github.com/psalpsdtools/psalpsdtools)
 
-# Support
-
-If you are having issues, please let us know. We have a mailing list located at: [a.diaziii@psa.gov.ph](mailto:a.diaziii@psa.gov.ph)
-
 # License
 
 The project is licensed under the MIT license.
