@@ -5,6 +5,7 @@ setup(name='psalpsdtools',
       description='PSA-LPSD Tools',
       packages=['psalpsdtools'],
       install_requires=[
+          'pip',
           'openpyxl',
       ],
       author_email='a.diaziii@psa.gov.ph',
