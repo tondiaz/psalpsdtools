@@ -1,3 +1,4 @@
+MANIFEST.in
 README.md
 setup.cfg
 setup.py
@@ -9,4 +10,5 @@ psalpsdtools.egg-info/PKG-INFO
 psalpsdtools.egg-info/SOURCES.txt
 psalpsdtools.egg-info/dependency_links.txt
 psalpsdtools.egg-info/not-zip-safe
+psalpsdtools.egg-info/requires.txt
 psalpsdtools.egg-info/top_level.txt

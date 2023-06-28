@@ -11,8 +11,7 @@ Some of the features include:
 - Lookup and copying of values from the Supply-Disposition worksheet
 - Pasting values to the EDRW output file
 - Generation of output files by province, based on user specified inputs which includes:
-
-  	- region
+	- region
 	- commodity
 	- year
 
