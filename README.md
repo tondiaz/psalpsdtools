@@ -1,5 +1,5 @@
 # psalpsdtools
-![LPSD Logo](LPSD%20Logo.png =100x100)
+![LPSD Logo](LPSDLogo.png =100x100)
 
 _psalpsdtools_ was developed for the processing of PSA’s Livestock and Poultry Statistics Division.
 
