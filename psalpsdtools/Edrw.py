@@ -87,7 +87,9 @@ class Edrw:
                                                     if comm == "broiler" or comm == "layer":
                                                         q1_dst_ws['AC' + str(rNumDst)].value = qtr_src_ws['AF' + str(rNumSrc)].value
                                                 print(f"PSA-LPSD (EDRW): Copied to destination -> {province} - {comm} - {srv} at row {rNumSrc}")
-
+                                        fpath = str(baseFolder) + '/Final'
+                                        if os.path.isdir(fpath) == False:
+                                            os.mkdir(fpath)
                                         fpath = str(baseFolder) + '/Final/' + str(regName)
                                         if os.path.isdir(fpath) == False:
                                             os.mkdir(fpath)
