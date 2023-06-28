@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>psalpsdtools &#8212; psalpsdtools alpha documentation</title>
+    <title>&lt;no title&gt; &#8212; psalpsdtools 1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -29,134 +29,97 @@
 
           <div class="body" role="main">
             
-  <section id="psalpsdtools">
-<h1>psalpsdtools<a class="headerlink" href="#psalpsdtools" title="Permalink to this heading">¶</a></h1>
-<p><img alt="LPSDLogo_sm" src="https://github.com/tondiaz/psalpsdtools/assets/3798545/643ce509-132b-47ad-b803-d75a1ffb421a" /></p>
-<p><strong><em>psalpsdtools</em></strong> is a file maintenance Python package tool designed specifically for the Livestock and Poultry Statistics Division to streamline file management and updating processes. This comprehensive package provides a user-friendly interface and a robust set of functionalities to efficiently organize, manipulate, and validate data files. From data cleaning and merging to filtering and report generation, this package offers a reliable solution to enhance productivity and ensure only accurate information are produced. Furthermore, this package is continuously evolving with ongoing development, promising future enhancements and additional functionalities to cater to the evolving needs of the division.</p>
-</section>
-<section id="features">
-<h1>Features<a class="headerlink" href="#features" title="Permalink to this heading">¶</a></h1>
+  <p># psalpsdtools
+![LPSDLogo_sm](<a class="reference external" href="https://github.com/tondiaz/psalpsdtools/assets/3798545/643ce509-132b-47ad-b803-d75a1ffb421a">https://github.com/tondiaz/psalpsdtools/assets/3798545/643ce509-132b-47ad-b803-d75a1ffb421a</a>)</p>
+<p><strong>_psalpsdtools_</strong> is a file maintenance Python package tool designed specifically for the Livestock and Poultry Statistics Division to streamline file management and updating processes. This comprehensive package provides a user-friendly interface and a robust set of functionalities to efficiently organize, manipulate, and validate data files. From data cleaning and merging to filtering and report generation, this package offers a reliable solution to enhance productivity and ensure only accurate information are produced. Furthermore, this package is continuously evolving with ongoing development, promising future enhancements and additional functionalities to cater to the evolving needs of the division.</p>
+<p># Features</p>
 <p>Some of the features include:</p>
-<section id="electronic-data-review-worksheet-edrw">
-<h2>Electronic Data Review Worksheet (EDRW)<a class="headerlink" href="#electronic-data-review-worksheet-edrw" title="Permalink to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>Lookup and copying of values from the Supply-Disposition worksheet</p></li>
-<li><p>Pasting values to the EDRW output file</p></li>
-<li><p>Generation of output files by province, based on user specified inputs which includes:</p>
-<ul>
+<p>####  Electronic Data Review Worksheet (EDRW)
+- Lookup and copying of values from the Supply-Disposition worksheet
+- Pasting values to the EDRW output file
+- Generation of output files by province, based on user specified inputs which includes:</p>
+<blockquote>
+<div><ul class="simple">
 <li><p>region</p></li>
 <li><p>commodity</p></li>
 <li><p>year</p></li>
 </ul>
-</li>
-</ul>
-</section>
-<section id="built-in-functions">
-<h2>Built-in Functions<a class="headerlink" href="#built-in-functions" title="Permalink to this heading">¶</a></h2>
+</div></blockquote>
+<p>#### Built-in Functions
+- _get_regions_ - returns a list of regions.</p>
 <ul class="simple">
-<li><p><em>get_regions</em> - returns a list of regions.</p></li>
-<li><p><em>get_provinces</em> - returns a list of provinces of a given region.</p></li>
+<li><p>_get_provinces_ - returns a list of provinces of a given region.</p></li>
 </ul>
-</section>
-</section>
-<section id="requirements">
-<h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">¶</a></h1>
-<p>Python 3.8 or later with all <a class="reference external" href="https://github.com/tondiaz/psalpsdtools/blob/main/docs/requirements.txt">requirements.txt</a> dependencies installed. To install run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">psalpsdtools</span>
-</pre></div>
-</div>
-</section>
-<section id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h1>
-<section id="edrw-updating">
-<h2>EDRW Updating<a class="headerlink" href="#edrw-updating" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="pre-requisites-for-chicken">
-<h2>- Pre-requisites (for Chicken)<a class="headerlink" href="#pre-requisites-for-chicken" title="Permalink to this heading">¶</a></h2>
-<ul>
-<li><p><em>baseFolder</em> should contain the S-D file.</p></li>
-<li><p>inside <em>baseFolder</em>, a folder named <em>Sources</em> must exist, containing the regional folders and the provincial files inside.</p>
-<p><img alt="Screenshot 2023-06-28 171534" src="https://github.com/tondiaz/psalpsdtools/assets/3798545/711bc2dc-e45a-413d-9551-d064e1e73d46" /></p>
-</li>
+<p># Requirements</p>
+<p>Python 3.8 or later with all [requirements.txt](<a class="reference external" href="https://github.com/tondiaz/psalpsdtools/blob/main/docs/requirements.txt">https://github.com/tondiaz/psalpsdtools/blob/main/docs/requirements.txt</a>) dependencies installed. To install run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">pip</span> <span class="pre">install</span> <span class="pre">psalpsdtools</span>
+<span class="pre">`</span></code>
+# Usage</p>
+<p>#### EDRW Updating</p>
+<p>#### - Pre-requisites (for Chicken)
+- _baseFolder_ should contain the S-D file.
+- inside _baseFolder_, a folder named _Sources_ must exist, containing the regional folders and the provincial files inside.</p>
+<blockquote>
+<div><p>![Screenshot 2023-06-28 171534](<a class="reference external" href="https://github.com/tondiaz/psalpsdtools/assets/3798545/711bc2dc-e45a-413d-9551-d064e1e73d46">https://github.com/tondiaz/psalpsdtools/assets/3798545/711bc2dc-e45a-413d-9551-d064e1e73d46</a>)</p>
+</div></blockquote>
+<ul class="simple">
 <li><p>Provincial EDRW source files should have .xlsm extensions</p></li>
-<li><p>Currently, source filename is expected to be “<em>cc</em> “ + <em>province name</em> + “_<em>year</em>”, e.g. <em>08 Agusan del Norte_23.xlsm</em></p></li>
+<li><p>Currently, source filename is expected to be “_cc_ “ + _province <a href="#id19"><span class="problematic" id="id20">name_</span></a> + “__year_”, e.g. _08 Agusan del <a href="#id21"><span class="problematic" id="id22">Norte_23.xlsm_</span></a></p></li>
 </ul>
-</section>
-<section id="example-code">
-<h2>- Example code:<a class="headerlink" href="#example-code" title="Permalink to this heading">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psalpsdtools</span> <span class="kn">import</span> <span class="n">Edrw</span>
-
-<span class="c1"># Specify Region</span>
-<span class="n">regName</span> <span class="o">=</span> <span class="s1">&#39;Caraga&#39;</span>
-
-<span class="c1"># Specify quarter</span>
-<span class="c1"># Used in identifying which worksheet to paste the copied values from the S-D file.</span>
-<span class="n">qtr</span> <span class="o">=</span> <span class="s1">&#39;Q1&#39;</span>
-
-<span class="c1"># Specify folder location of Sources and Final files.</span>
-<span class="c1"># The S-D file should also be found here.</span>
-<span class="n">baseFolder</span> <span class="o">=</span> <span class="s1">&#39;D:/EDRW/Q1&#39;</span>
-
-<span class="c1"># Specify S-D filename</span>
-<span class="c1"># IMPORTANT! Only .xlsm or .xlsx extensions are accepted</span>
-<span class="n">sdFile</span> <span class="o">=</span> <span class="s1">&#39;SD Q1 2023.xlsm&#39;</span>
-
-<span class="c1"># Commodity code i.e. 08=chicken, 09=duck, etc.</span>
-<span class="n">commcode</span> <span class="o">=</span> <span class="s1">&#39;08&#39;</span>
-
-<span class="c1"># Year</span>
-<span class="n">yr</span> <span class="o">=</span> <span class="s1">&#39;23&#39;</span>
-
-<span class="c1"># Call an instance of the Edrw package</span>
-<span class="n">myedrw</span> <span class="o">=</span> <span class="n">Edrw</span><span class="p">()</span>
-
-<span class="c1"># Run update_sources with the parameters</span>
-<span class="n">myedrw</span><span class="o">.</span><span class="n">update_sources</span><span class="p">(</span><span class="n">regName</span><span class="p">,</span><span class="n">qtr</span><span class="p">,</span><span class="n">baseFolder</span><span class="p">,</span><span class="n">sdFile</span><span class="p">,</span><span class="n">commcode</span><span class="p">,</span><span class="n">yr</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="id1">
-<h2>Built-in Functions<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="get-regions">
-<h2><em>get_regions</em><a class="headerlink" href="#get-regions" title="Permalink to this heading">¶</a></h2>
-<p>Example code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psalpsdtools</span> <span class="kn">import</span> <span class="n">PhRegPrv</span>
-
-<span class="n">philippines</span> <span class="o">=</span> <span class="n">PhRegPrv</span><span class="p">()</span>
-<span class="n">regions</span> <span class="o">=</span> <span class="n">philippines</span><span class="o">.</span><span class="n">get_regions</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">region</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">region</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="get-provinces">
-<h2><em>get_provinces</em><a class="headerlink" href="#get-provinces" title="Permalink to this heading">¶</a></h2>
-<p>Example code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psalpsdtools</span> <span class="kn">import</span> <span class="n">PhRegPrv</span>
-
-<span class="c1"># Specifiy a region</span>
-<span class="n">regname</span> <span class="o">=</span> <span class="s1">&#39;Caraga&#39;</span>
-
-<span class="n">philippines</span> <span class="o">=</span> <span class="n">PhRegPrv</span><span class="p">()</span>
-<span class="n">provinces</span> <span class="o">=</span> <span class="n">philippines</span><span class="o">.</span><span class="n">get_provinces</span><span class="p">(</span><span class="n">regname</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">province</span> <span class="ow">in</span> <span class="n">provinces</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">province</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="contribute">
-<h1>Contribute<a class="headerlink" href="#contribute" title="Permalink to this heading">¶</a></h1>
-<p>Issue Tracker: <a class="reference internal" href="#github.com/psalpsdtools/psalpsdtools/issues"><span class="xref myst">github.com/psalpsdtools/psalpsdtools/issues</span></a></p>
-<p>Source Code: <a class="reference internal" href="#github.com/psalpsdtools/psalpsdtools"><span class="xref myst">github.com/psalpsdtools/psalpsdtools</span></a></p>
-</section>
-<section id="license">
-<h1>License<a class="headerlink" href="#license" title="Permalink to this heading">¶</a></h1>
+<p>#### - Example code:</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>`
+from psalpsdtools import Edrw</p>
+<p># Specify Region
+regName = ‘Caraga’</p>
+<p># Specify quarter
+# Used in identifying which worksheet to paste the copied values from the S-D file.
+qtr = ‘Q1’</p>
+<p># Specify folder location of Sources and Final files.
+# The S-D file should also be found here.
+baseFolder = ‘D:/EDRW/Q1’</p>
+<p># Specify S-D filename
+# IMPORTANT! Only .xlsm or .xlsx extensions are accepted
+sdFile = ‘SD Q1 2023.xlsm’</p>
+<p># Commodity code i.e. 08=chicken, 09=duck, etc.
+commcode = ‘08’</p>
+<p># Year
+yr = ‘23’</p>
+<p># Call an instance of the Edrw package
+myedrw = Edrw()</p>
+<p># Run update_sources with the parameters
+myedrw.update_sources(regName,qtr,baseFolder,sdFile,commcode,yr)
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>#### Built-in Functions
+#### _get_regions_
+Example code:
+<a href="#id7"><span class="problematic" id="id8">``</span></a>`
+from psalpsdtools import PhRegPrv</p>
+<p>philippines = PhRegPrv()
+regions = philippines.get_regions()</p>
+<dl class="simple">
+<dt>for region in regions:</dt><dd><p>print(region)</p>
+</dd>
+</dl>
+<p><a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a></p>
+<p>#### _get_provinces_
+Example code:
+<a href="#id13"><span class="problematic" id="id14">``</span></a>`
+from psalpsdtools import PhRegPrv</p>
+<p># Specifiy a region
+regname = ‘Caraga’</p>
+<p>philippines = PhRegPrv()
+provinces = philippines.get_provinces(regname)</p>
+<dl class="simple">
+<dt>for province in provinces:</dt><dd><p>print(province)</p>
+</dd>
+</dl>
+<p><a href="#id15"><span class="problematic" id="id16">``</span></a><a href="#id17"><span class="problematic" id="id18">`</span></a></p>
+<p># Contribute</p>
+<p>Issue Tracker: [github.com/psalpsdtools/psalpsdtools/issues](github.com/psalpsdtools/psalpsdtools/issues)</p>
+<p>Source Code: [github.com/psalpsdtools/psalpsdtools](github.com/psalpsdtools/psalpsdtools)</p>
+<p># License</p>
 <p>The project is licensed under the MIT license.</p>
-</section>
 
 
           </div>
@@ -213,7 +176,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |
-      <a href="_sources/index.md.txt"
+      <a href="_sources/index.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

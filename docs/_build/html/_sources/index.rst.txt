@@ -1,60 +1,112 @@
-psalpsdtools
-============
+# psalpsdtools
+![LPSDLogo_sm](https://github.com/tondiaz/psalpsdtools/assets/3798545/643ce509-132b-47ad-b803-d75a1ffb421a)
 
-psalpsdtools is developed for the processing of PSA's Livestock and Poultry Statistics Division.
+**_psalpsdtools_** is a file maintenance Python package tool designed specifically for the Livestock and Poultry Statistics Division to streamline file management and updating processes. This comprehensive package provides a user-friendly interface and a robust set of functionalities to efficiently organize, manipulate, and validate data files. From data cleaning and merging to filtering and report generation, this package offers a reliable solution to enhance productivity and ensure only accurate information are produced. Furthermore, this package is continuously evolving with ongoing development, promising future enhancements and additional functionalities to cater to the evolving needs of the division.
 
-Features
---------
+# Features
 
-- Looking-up of values from the Supply-Disposition file and copying to the EDRW file.
-- Creating output files based on user specified:
-   - region
-   - commodity
-   - year
+Some of the features include:
 
-Installation
-------------
+####  Electronic Data Review Worksheet (EDRW)
+- Lookup and copying of values from the Supply-Disposition worksheet
+- Pasting values to the EDRW output file
+- Generation of output files by province, based on user specified inputs which includes:
+	- region
+	- commodity
+	- year
 
-Install psalpsdtools by running:
+#### Built-in Functions
+- _get_regions_ - returns a list of regions.
 
-    pip install psalpsdtools
+- _get_provinces_ - returns a list of provinces of a given region.
 
-Usage
------
+# Requirements
 
+Python 3.8 or later with all [requirements.txt](https://github.com/tondiaz/psalpsdtools/blob/main/docs/requirements.txt) dependencies installed. To install run:
+
+```
+pip install psalpsdtools
+```
+# Usage
+
+#### EDRW Updating
+
+#### - Pre-requisites (for Chicken)
+- _baseFolder_ should contain the S-D file.
+- inside _baseFolder_, a folder named _Sources_ must exist, containing the regional folders and the provincial files inside.
+  
+	![Screenshot 2023-06-28 171534](https://github.com/tondiaz/psalpsdtools/assets/3798545/711bc2dc-e45a-413d-9551-d064e1e73d46)
+
+- Provincial EDRW source files should have .xlsm extensions
+- Currently, source filename is expected to be "_cc_ " + _province name_ + "__year_", e.g. _08 Agusan del Norte_23.xlsm_
+
+#### - Example code:
+ 
+```
 from psalpsdtools import Edrw
 
-| # SET REGION TO PROCESS
-| regName = "Caraga"
-| # SET QUARTER, ALSO USED IN READING THE S-D FILE
-| qtr = "Q1"
-| # SET FOLDER OF SOURCES/FINAL FILES INCLUDING S-D FILE
-| baseFolder = "D:/EDRW/Q1"
-| # SET S-D FILE NAME
-| sdFile = 'SD Q1 2023.xlsm'
-| # COMMODITY 08=chicken, 09=duck, etc.
-| commcode = '08'
-| # Year
-| yr = '23'
+# Specify Region
+regName = 'Caraga'
 
-| # CALL AN INSTANCE OF Edrw
-| myedrw = Edrw()
-| # RUN THE UPDATING
-| myedrw.update_sources(regName,qtr,baseFolder,sdFile,commcode,yr)
+# Specify quarter
+# Used in identifying which worksheet to paste the copied values from the S-D file.
+qtr = 'Q1'
 
-Contribute
-----------
+# Specify folder location of Sources and Final files.
+# The S-D file should also be found here.
+baseFolder = 'D:/EDRW/Q1'
 
-- Issue Tracker: github.com/psalpsdtools/psalpsdtools/issues
-- Source Code: github.com/psalpsdtools/psalpsdtools
+# Specify S-D filename
+# IMPORTANT! Only .xlsm or .xlsx extensions are accepted
+sdFile = 'SD Q1 2023.xlsm'
 
-Support
--------
+# Commodity code i.e. 08=chicken, 09=duck, etc.
+commcode = '08'
 
-If you are having issues, please let us know.
-We have a mailing list located at: a.diaziii@psa.gov.ph
+# Year
+yr = '23'
 
-License
--------
+# Call an instance of the Edrw package
+myedrw = Edrw()
 
-The project is licensed under the BSD license.
+# Run update_sources with the parameters
+myedrw.update_sources(regName,qtr,baseFolder,sdFile,commcode,yr)
+```
+
+#### Built-in Functions
+#### _get_regions_
+Example code:
+```
+from psalpsdtools import PhRegPrv
+
+philippines = PhRegPrv()
+regions = philippines.get_regions()
+
+for region in regions:
+    print(region)
+```
+
+#### _get_provinces_
+Example code:
+```
+from psalpsdtools import PhRegPrv
+
+# Specifiy a region
+regname = 'Caraga'
+
+philippines = PhRegPrv()
+provinces = philippines.get_provinces(regname)
+
+for province in provinces:
+    print(province)
+```
+
+# Contribute
+
+Issue Tracker: [github.com/psalpsdtools/psalpsdtools/issues](github.com/psalpsdtools/psalpsdtools/issues)
+
+Source Code: [github.com/psalpsdtools/psalpsdtools](github.com/psalpsdtools/psalpsdtools)
+
+# License
+
+The project is licensed under the MIT license.
