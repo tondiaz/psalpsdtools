@@ -1,7 +1,7 @@
 # psalpsdtools
 ![LPSDLogo_sm](https://github.com/tondiaz/psalpsdtools/assets/3798545/643ce509-132b-47ad-b803-d75a1ffb421a)
 
-_psalpsdtools_ was developed for the processing of PSA’s Livestock and Poultry Statistics Division.
+Introducing **_psalpsdtools_**, a file maintenance package Python tool designed specifically for the Livestock and Poultry Statistics Division to streamline file management and updating processes. This comprehensive package provides a user-friendly interface and a robust set of functionalities to efficiently organize, manipulate, and validate data files. From data cleaning and merging to filtering and report generation, this package offers a reliable solution to enhance productivity and ensure only accurate information are produced. Furthermore, this package is continuously evolving with ongoing development, promising future enhancements and additional functionalities to cater to the evolving needs of the division.
 
 # Features
 
@@ -20,44 +20,38 @@ Some of the features include:
 
 Python 3.8 or later with all [requirements.txt](https://github.com/tondiaz/psalpsdtools/blob/main/docs/requirements.txt) dependencies installed. To install run:
 
-```bash
+```
 pip install psalpsdtools
 ```
 # Usage
-```bash
+```
 from psalpsdtools import Edrw
 
 # Specify Region
-
 regName = 'Caraga'
 
-# Specify quarter, this used in identifying which worksheet to paste the copied values from the S-D file..
-
+# Specify quarter
+# Used in identifying which worksheet to paste the copied values from the S-D file.
 qtr = 'Q1'
 
-# Specify folder location of Sources and Final files, the S-D file should also be found here.
-
+# Specify folder location of Sources and Final files.
+# The S-D file should also be found here.
 baseFolder = 'D:/EDRW/Q1'
 
 # Specify S-D filename
 # IMPORTANT! Only .xlsm or .xlsx extensions are accepted
-
 sdFile = 'SD Q1 2023.xlsm'
 
 # Commodity code i.e. 08=chicken, 09=duck, etc.
-
 commcode = '08'
 
 # Year
-
 yr = '23'
 
 # Call an instance of the Edrw package
-
 myedrw = Edrw()
 
 # Run update_sources with the parameters
-
 myedrw.update_sources(regName,qtr,baseFolder,sdFile,commcode,yr)
 ```
 
