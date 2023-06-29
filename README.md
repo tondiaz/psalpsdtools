@@ -22,7 +22,7 @@ Some of the features include:
 
 # Requirements
 
-Python 3.8 or later with all [requirements.txt](https://github.com/tondiaz/psalpsdtools/blob/main/docs/requirements.txt) dependencies installed. To install run:
+Python 3.8 or later with all [required](https://github.com/tondiaz/psalpsdtools/blob/main/docs/requirements.txt) dependencies installed. To install run:
 
 ```
 pip install psalpsdtools
