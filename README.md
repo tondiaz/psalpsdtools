@@ -103,9 +103,9 @@ for province in provinces:
 
 # Contribute
 
-Issue Tracker: [github.com/psalpsdtools/psalpsdtools/issues](github.com/psalpsdtools/psalpsdtools/issues)
+Issue Tracker: [github.com/psalpsdtools/psalpsdtools/issues](https://www.github.com/psalpsdtools/psalpsdtools/issues)
 
-Source Code: [github.com/psalpsdtools/psalpsdtools](github.com/psalpsdtools/psalpsdtools)
+Source Code: [github.com/psalpsdtools/psalpsdtools](https://www.github.com/psalpsdtools/psalpsdtools)
 
 # License
 
