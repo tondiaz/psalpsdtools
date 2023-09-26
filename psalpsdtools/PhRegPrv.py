@@ -8,6 +8,14 @@ class PhRegPrv:
                 "NCR 4",
                 "NCR 5"
             ],
+            "CAR": [
+                "Abra",
+                "Apayao",
+                "Benguet",
+                "Ifugao",
+                "Kalinga",
+                "Mountain Province"
+            ],
             "Ilocos Region": [
                 "Ilocos Norte",
                 "Ilocos Sur",
