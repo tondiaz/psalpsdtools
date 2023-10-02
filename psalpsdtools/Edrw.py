@@ -130,28 +130,6 @@ class Edrw:
                                     if os.path.isfile(fpath) == True:
                                         # for comm in comm_arr:
                                         for srv in srv_arr:
-                                            # if comm == "native":
-                                            #     if srv == " B":
-                                            #         rNumDst = 22
-                                            #     elif srv == " C":
-                                            #         rNumDst = 28
-                                            #     elif srv == "_T":
-                                            #         rNumDst = 34
-                                            # elif comm == "gamefowl":
-                                            #     if srv == " B":
-                                            #         rNumDst = 40
-                                            #     elif srv == " C":
-                                            #         rNumDst = 46
-                                            #     elif srv == "_T":
-                                            #         rNumDst = 52
-                                            # elif comm == "broiler":
-                                            #     if srv == " B":
-                                            #         rNumDst = 58
-                                            #     elif srv == " C":
-                                            #         rNumDst = 64
-                                            #     elif srv == "_T":
-                                            #         rNumDst = 70
-                                            # elif comm == "layer":
                                             if srv == "Backyard": # row number of destinations of copied values from SD
                                                 rNumDst = 22
                                             elif srv == "Commercial":
@@ -182,7 +160,127 @@ class Edrw:
                                                 qtr_dst_ws['AD' + str(rNumDst)].value = qtr_src_ws['AE' + str(rNumSrc)].value # SHIPPED-OUT TO OTHER PRV
                                             print(f"PSA-LPSD (EDRW): Copied to destination -> {province} - {srv} at row {rNumSrc}")
 
-                                        fpath = str(baseFolder) + '/Final/' + str(regCode) + ' ' + str(regName)
+                                        fpath = str(baseFolder) + '/Final/' + str(regCode) + ' ' + str(regName) + '/' + str(regCode) + ' ' + str(province)
+                                        if os.path.isdir(fpath) == False:
+                                            os.mkdir(fpath)
+                                        finalFile = fpath + '/' + str(commcode) + ' ' + str(province) + '_' + str(yr) + '.xlsx'
+                                        print(f"PSA-LPSD (EDRW): Saving to file -> {finalFile}")
+                                        dst.save(finalFile)
+                                    else:
+                                        print(f"File {srcFile}{fileExt} Not Found.")
+                    else:
+                        print(f"File {srcFile}{fileExt} Not Found.")
+            else:
+                print("Region not found or has no provinces.")
+        # Duck Egg
+        if commcode == '09a':
+            src_active = src["Backyard"] # Get Province Names from this worksheet
+            # comm_arr = ["native","gamefowl","broiler","layer"]
+            srv_arr = ["Backyard","Commercial","Total"]
+            if selected_provinces:
+                for province in selected_provinces:
+                    srcFile = str(commcode) + ' ' + str(province) + '_' + str(yr) # template files
+                    fileExt = '.xlsx' # orig .xlsm
+                    fpath = str(baseFolder) + '/Sources/' + str(regCode) + ' ' + str(regName) + '/' + str(regCode) + ' ' + str(province) + '/' + str(srcFile) + str(fileExt)
+                    if os.path.isfile(fpath) == True:
+                        for row in src_active.iter_rows(min_row=18, min_col=2, max_row=118, max_col=2):
+                            for cell in row:
+                                if cell.value == province:
+                                    #print(f"{province} {cell.row}")
+                                    rNumSrc = cell.row
+
+                                    #dst = load_workbook(filename=str(baseFolder) + '/Sources/' + str(regName) + '/' + str(srcFile) + str(fileExt))
+                                    dst = load_workbook(filename=fpath)
+                                    #dst = xlrd.open_workbook('Sources/' + str(regName) + '/' + str(srcFile) + str(fileExt))
+                                    qtr_dst_ws = dst[qtr]
+                                    currqtr = qtr[:-1] + str(int(qtr[-1])+1) # current quarter +1
+                                    currqtr_dst_ws = dst[currqtr]
+                                    #q1_dst_ws = dst.sheet_by_name(qtr)
+
+                                    if os.path.isfile(fpath) == True:
+                                        # for comm in comm_arr:
+                                        for srv in srv_arr:
+                                            if srv == "Backyard": # row number of destinations of copied values from SD
+                                                rNumDst = 22
+                                            elif srv == "Commercial":
+                                                rNumDst = 28
+                                            elif srv == "Total":
+                                                rNumDst = 32
+
+                                            # sheetNameSrc = str(comm) + str(srv)
+                                            qtr_src_ws = src[srv]
+                                            print(f"PSA-LPSD (EDRW): Loading source -> {province} - {srv}")
+
+                                            if srv != "Total":
+                                                #print(f"Copying Source B{rNumSrc} to E{rNumDst}")
+                                                qtr_dst_ws['I' + str(rNumDst)].value = qtr_src_ws['G' + str(rNumSrc)].value # PIECES (EGG PROD)
+                                                qtr_dst_ws['J' + str(rNumDst)].value = qtr_src_ws['H' + str(rNumSrc)].value # CONVERSION FACTOR
+                                                qtr_dst_ws['L' + str(rNumDst)].value = qtr_src_ws['J' + str(rNumSrc)].value # ESTIMATED HATCHING EGGS
+                                            elif srv == "Total":
+                                                qtr_dst_ws['P' + str(rNumDst)].value = qtr_src_ws['N' + str(rNumSrc)].value # SHIPPED-OUT TO OTHER PRV
+                                            print(f"PSA-LPSD (EDRW): Copied to destination -> {province} - {srv} at row {rNumSrc}")
+
+                                        fpath = str(baseFolder) + '/Final/' + str(regCode) + ' ' + str(regName) + '/' + str(regCode) + ' ' + str(province)
+                                        if os.path.isdir(fpath) == False:
+                                            os.mkdir(fpath)
+                                        finalFile = fpath + '/' + str(commcode) + ' ' + str(province) + '_' + str(yr) + '.xlsx'
+                                        print(f"PSA-LPSD (EDRW): Saving to file -> {finalFile}")
+                                        dst.save(finalFile)
+                                    else:
+                                        print(f"File {srcFile}{fileExt} Not Found.")
+                    else:
+                        print(f"File {srcFile}{fileExt} Not Found.")
+            else:
+                print("Region not found or has no provinces.")
+        # Chicken Egg
+        if commcode == '08a':
+            src_active = src["Backyard"] # Get Province Names from this worksheet
+            # comm_arr = ["native","gamefowl","broiler","layer"]
+            srv_arr = ["Backyard","Commercial","Total"]
+            if selected_provinces:
+                for province in selected_provinces:
+                    srcFile = str(commcode) + ' ' + str(province) + '_' + str(yr) # template files
+                    fileExt = '.xlsx' # orig .xlsm
+                    fpath = str(baseFolder) + '/Sources/' + str(regCode) + ' ' + str(regName) + '/' + str(regCode) + ' ' + str(province) + '/' + str(srcFile) + str(fileExt)
+                    if os.path.isfile(fpath) == True:
+                        for row in src_active.iter_rows(min_row=18, min_col=2, max_row=118, max_col=2):
+                            for cell in row:
+                                if cell.value == province:
+                                    #print(f"{province} {cell.row}")
+                                    rNumSrc = cell.row
+
+                                    #dst = load_workbook(filename=str(baseFolder) + '/Sources/' + str(regName) + '/' + str(srcFile) + str(fileExt))
+                                    dst = load_workbook(filename=fpath)
+                                    #dst = xlrd.open_workbook('Sources/' + str(regName) + '/' + str(srcFile) + str(fileExt))
+                                    qtr_dst_ws = dst[qtr]
+                                    currqtr = qtr[:-1] + str(int(qtr[-1])+1) # current quarter +1
+                                    currqtr_dst_ws = dst[currqtr]
+                                    #q1_dst_ws = dst.sheet_by_name(qtr)
+
+                                    if os.path.isfile(fpath) == True:
+                                        # for comm in comm_arr:
+                                        for srv in srv_arr:
+                                            if srv == "Backyard": # row number of destinations of copied values from SD
+                                                rNumDst = 22
+                                            elif srv == "Commercial":
+                                                rNumDst = 28
+                                            elif srv == "Total":
+                                                rNumDst = 32
+
+                                            # sheetNameSrc = str(comm) + str(srv)
+                                            qtr_src_ws = src[srv]
+                                            print(f"PSA-LPSD (EDRW): Loading source -> {province} - {srv}")
+
+                                            if srv != "Total":
+                                                #print(f"Copying Source B{rNumSrc} to E{rNumDst}")
+                                                qtr_dst_ws['I' + str(rNumDst)].value = qtr_src_ws['G' + str(rNumSrc)].value # PIECES (EGG PROD)
+                                                qtr_dst_ws['J' + str(rNumDst)].value = qtr_src_ws['H' + str(rNumSrc)].value # CONVERSION FACTOR
+                                                qtr_dst_ws['L' + str(rNumDst)].value = qtr_src_ws['J' + str(rNumSrc)].value # ESTIMATED HATCHING EGGS
+                                            elif srv == "Total":
+                                                qtr_dst_ws['P' + str(rNumDst)].value = qtr_src_ws['N' + str(rNumSrc)].value # SHIPPED-OUT TO OTHER PRV
+                                            print(f"PSA-LPSD (EDRW): Copied to destination -> {province} - {srv} at row {rNumSrc}")
+
+                                        fpath = str(baseFolder) + '/Final/' + str(regCode) + ' ' + str(regName) + '/' + str(regCode) + ' ' + str(province)
                                         if os.path.isdir(fpath) == False:
                                             os.mkdir(fpath)
                                         finalFile = fpath + '/' + str(commcode) + ' ' + str(province) + '_' + str(yr) + '.xlsx'
