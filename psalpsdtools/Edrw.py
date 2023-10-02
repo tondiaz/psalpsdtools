@@ -1,4 +1,4 @@
-from .PhRegPrv import PhRegPrv
+from PhRegPrv import PhRegPrv
 from openpyxl import load_workbook
 import os
 #import xlrd
