@@ -234,7 +234,7 @@ class Edrw:
                 print("Region not found or has no provinces.")
         # Chicken Egg
         if commcode == '08a':
-            src_active = src["Backyard"] # Get Province Names from this worksheet
+            src_active = src["Native_B"] # Get Province Names from this worksheet
             # comm_arr = ["native","gamefowl","broiler","layer"]
             srv_arr = ["Native_B","Native_C","Broiler_C","Layer_B","Layer_C"]
             if selected_provinces:

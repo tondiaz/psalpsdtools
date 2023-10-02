@@ -8,9 +8,9 @@ qtr = "Q2"
 # SET FOLDER OF SOURCES/FINAL FILES INCLUDING S-D FILE
 baseFolder = "C:/EDRW/Q2"
 # SET S-D FILE NAME
-sdFile = 'Duck_SD Q2 2023.xlsm'
+sdFile = 'Chicken Egg_SD Q2 2023.xlsm'
 # COMMODITY 08=chicken, 09=duck, etc.
-commcode = '09'
+commcode = '08a'
 # Year
 yr = '23'
 
