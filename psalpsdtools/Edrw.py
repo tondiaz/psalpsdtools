@@ -9,6 +9,8 @@ class Edrw:
         philippines = PhRegPrv()
         selected_provinces = philippines.get_provinces(regName)
         src = load_workbook(filename = baseFolder + "/" + sdFile, data_only=True)
+        if regName == "Central Luzon":
+            regCode = "03"
 
         if commcode == '08':
             src_active = src["native B"] # Get Province Names from this worksheet
@@ -109,7 +111,7 @@ class Edrw:
                 for province in selected_provinces:
                     srcFile = str(commcode) + ' ' + str(province) + '_' + str(yr) # template files
                     fileExt = '.xlsm' # orig .xlsm
-                    fpath = str(baseFolder) + '/Sources/' + str(regName) + '/' + str(srcFile) + str(fileExt)
+                    fpath = str(baseFolder) + '/Sources/' + str(regCode) + ' ' + str(regName) + '/' + str(regCode) + ' ' + str(province) + '/' + str(srcFile) + str(fileExt)
                     if os.path.isfile(fpath) == True:
                         for row in src_active.iter_rows(min_row=18, min_col=2, max_row=118, max_col=2):
                             for cell in row:
