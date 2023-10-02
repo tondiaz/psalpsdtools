@@ -110,7 +110,7 @@ class Edrw:
             if selected_provinces:
                 for province in selected_provinces:
                     srcFile = str(commcode) + ' ' + str(province) + '_' + str(yr) # template files
-                    fileExt = '.xlsm' # orig .xlsm
+                    fileExt = '.xlsx' # orig .xlsm
                     fpath = str(baseFolder) + '/Sources/' + str(regCode) + ' ' + str(regName) + '/' + str(regCode) + ' ' + str(province) + '/' + str(srcFile) + str(fileExt)
                     if os.path.isfile(fpath) == True:
                         for row in src_active.iter_rows(min_row=18, min_col=2, max_row=118, max_col=2):
@@ -119,7 +119,8 @@ class Edrw:
                                     #print(f"{province} {cell.row}")
                                     rNumSrc = cell.row
 
-                                    dst = load_workbook(filename=str(baseFolder) + '/Sources/' + str(regName) + '/' + str(srcFile) + str(fileExt))
+                                    #dst = load_workbook(filename=str(baseFolder) + '/Sources/' + str(regName) + '/' + str(srcFile) + str(fileExt))
+                                    dst = load_workbook(filename=fpath)
                                     #dst = xlrd.open_workbook('Sources/' + str(regName) + '/' + str(srcFile) + str(fileExt))
                                     qtr_dst_ws = dst[qtr]
                                     currqtr = qtr[:-1] + str(int(qtr[-1])+1) # current quarter +1
@@ -159,7 +160,7 @@ class Edrw:
                                                 rNumDst = 32
 
                                             # sheetNameSrc = str(comm) + str(srv)
-                                            qtr_src_ws = src[sheetNameSrc]
+                                            qtr_src_ws = src[srv]
                                             print(f"PSA-LPSD (EDRW): Loading source -> {province} - {srv}")
 
                                             if srv != "Total":
@@ -179,12 +180,12 @@ class Edrw:
                                             elif srv == "Total":
                                                 qtr_dst_ws['AB' + str(rNumDst)].value = qtr_src_ws['AC' + str(rNumSrc)].value # INFLOW FROM OTHER PRV
                                                 qtr_dst_ws['AD' + str(rNumDst)].value = qtr_src_ws['AE' + str(rNumSrc)].value # SHIPPED-OUT TO OTHER PRV
-                                            print(f"PSA-LPSD (EDRW): Copied to destination -> {province} - {comm} - {srv} at row {rNumSrc}")
+                                            print(f"PSA-LPSD (EDRW): Copied to destination -> {province} - {srv} at row {rNumSrc}")
 
-                                        fpath = str(baseFolder) + '/Final/' + str(regName)
+                                        fpath = str(baseFolder) + '/Final/' + str(regCode) + ' ' + str(regName)
                                         if os.path.isdir(fpath) == False:
                                             os.mkdir(fpath)
-                                        finalFile = str(baseFolder) + '/Final/' + str(regName) + '/' + str(commcode) + ' ' + str(province) + '_' + str(yr) + '.xls'
+                                        finalFile = fpath + '/' + str(commcode) + ' ' + str(province) + '_' + str(yr) + '.xlsx'
                                         print(f"PSA-LPSD (EDRW): Saving to file -> {finalFile}")
                                         dst.save(finalFile)
                                     else:
