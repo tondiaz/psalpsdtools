@@ -297,7 +297,7 @@ class Edrw:
                                         fpath = str(baseFolder) + '/Final/' + str(regCode) + ' ' + str(regName) + '/' + str(regCode) + ' ' + str(province)
                                         if os.path.isdir(fpath) == False:
                                             os.mkdir(fpath)
-                                        finalFile = fpath + '/' + str(commcode) + ' ' + str(province) + '_' + str(yr) + '.xlsx'
+                                        finalFile = fpath + '/' + str(commcode) + ' ' + str(province) + '_' + str(yr) + '.xlsx' # was .xls
                                         print(f"PSA-LPSD (EDRW): Saving to file -> {finalFile}")
                                         dst.save(finalFile)
                                     else:
