@@ -236,7 +236,7 @@ class Edrw:
         if commcode == '08a':
             src_active = src["Backyard"] # Get Province Names from this worksheet
             # comm_arr = ["native","gamefowl","broiler","layer"]
-            srv_arr = ["Backyard","Commercial","Total"]
+            srv_arr = ["Native_B","Native_C","Broiler_C","Layer_B","Layer_C"]
             if selected_provinces:
                 for province in selected_provinces:
                     srcFile = str(commcode) + ' ' + str(province) + '_' + str(yr) # template files
@@ -260,24 +260,38 @@ class Edrw:
                                     if os.path.isfile(fpath) == True:
                                         # for comm in comm_arr:
                                         for srv in srv_arr:
-                                            if srv == "Backyard": # row number of destinations of copied values from SD
+                                            if srv == "Native_B": # row number of destinations of copied values from SD
                                                 rNumDst = 22
-                                            elif srv == "Commercial":
+                                            elif srv == "Native_C":
                                                 rNumDst = 28
-                                            elif srv == "Total":
-                                                rNumDst = 32
+                                            elif srv == "Broiler_C":
+                                                rNumDst = 38
+                                            elif srv == "Layer_B":
+                                                rNumDst = 44
+                                            elif srv == "Layer_C":
+                                                rNumDst = 50
 
                                             # sheetNameSrc = str(comm) + str(srv)
                                             qtr_src_ws = src[srv]
                                             print(f"PSA-LPSD (EDRW): Loading source -> {province} - {srv}")
 
-                                            if srv != "Total":
+                                            if srv == "Native_B" or srv == "Native_C":
                                                 #print(f"Copying Source B{rNumSrc} to E{rNumDst}")
-                                                qtr_dst_ws['I' + str(rNumDst)].value = qtr_src_ws['G' + str(rNumSrc)].value # PIECES (EGG PROD)
-                                                qtr_dst_ws['J' + str(rNumDst)].value = qtr_src_ws['H' + str(rNumSrc)].value # CONVERSION FACTOR
-                                                qtr_dst_ws['L' + str(rNumDst)].value = qtr_src_ws['J' + str(rNumSrc)].value # ESTIMATED HATCHING EGGS
-                                            elif srv == "Total":
-                                                qtr_dst_ws['P' + str(rNumDst)].value = qtr_src_ws['N' + str(rNumSrc)].value # SHIPPED-OUT TO OTHER PRV
+                                                qtr_dst_ws['J' + str(rNumDst)].value = qtr_src_ws['H' + str(rNumSrc)].value # PIECES (EGG PROD)
+                                                qtr_dst_ws['K' + str(rNumDst)].value = qtr_src_ws['I' + str(rNumSrc)].value # CONVERSION FACTOR
+                                                qtr_dst_ws['M' + str(rNumDst)].value = qtr_src_ws['K' + str(rNumSrc)].value # ESTIMATED HATCHING EGGS
+                                                qtr_dst_ws['Q' + str(rNumDst)].value = qtr_src_ws['O' + str(rNumSrc)].value # SHIPPED-OUT TO OTHER PRV
+                                            elif srv == "Broiler_C" or srv == "Layer_C":
+                                                qtr_dst_ws['I' + str(rNumDst)].value = qtr_src_ws['G' + str(rNumSrc)].value # ELER
+                                                qtr_dst_ws['J' + str(rNumDst)].value = qtr_src_ws['H' + str(rNumSrc)].value # PIECES (EGG PROD)
+                                                qtr_dst_ws['K' + str(rNumDst)].value = qtr_src_ws['I' + str(rNumSrc)].value # CONVERSION FACTOR
+                                                qtr_dst_ws['M' + str(rNumDst)].value = qtr_src_ws['K' + str(rNumSrc)].value # ESTIMATED HATCHING EGGS
+                                                qtr_dst_ws['Q' + str(rNumDst)].value = qtr_src_ws['O' + str(rNumSrc)].value # SHIPPED-OUT TO OTHER PRV
+                                            elif srv == "Layer_B":
+                                                qtr_dst_ws['I' + str(rNumDst)].value = qtr_src_ws['G' + str(rNumSrc)].value # ELER
+                                                qtr_dst_ws['J' + str(rNumDst)].value = qtr_src_ws['H' + str(rNumSrc)].value # PIECES (EGG PROD)
+                                                qtr_dst_ws['K' + str(rNumDst)].value = qtr_src_ws['I' + str(rNumSrc)].value # CONVERSION FACTOR
+                                                qtr_dst_ws['Q' + str(rNumDst)].value = qtr_src_ws['O' + str(rNumSrc)].value # SHIPPED-OUT TO OTHER PRV
                                             print(f"PSA-LPSD (EDRW): Copied to destination -> {province} - {srv} at row {rNumSrc}")
 
                                         fpath = str(baseFolder) + '/Final/' + str(regCode) + ' ' + str(regName) + '/' + str(regCode) + ' ' + str(province)
