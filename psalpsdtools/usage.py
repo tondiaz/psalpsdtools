@@ -2,7 +2,7 @@
 from Edrw import Edrw
 
 # SET REGION TO PROCESS
-regName = "Central Luzon"
+regName = "Central Visayas"
 # SET QUARTER, ALSO USED IN READING THE S-D FILE
 qtr = "Q2"
 # SET FOLDER OF SOURCES/FINAL FILES INCLUDING S-D FILE
