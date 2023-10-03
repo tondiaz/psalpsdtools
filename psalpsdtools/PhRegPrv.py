@@ -14,7 +14,7 @@ class PhRegPrv:
                 "Benguet",
                 "Ifugao",
                 "Kalinga",
-                "Mountain Province"
+                "Mt. Province"
             ],
             "Ilocos Region": [
                 "Ilocos Norte",
@@ -45,7 +45,7 @@ class PhRegPrv:
                 "Quezon",
                 "Rizal"
             ],
-            "MIMAROPA": [
+            "MIMAROPA Region": [
                 "Marinduque",
                 "Occidental Mindoro",
                 "Oriental Mindoro",
@@ -83,8 +83,8 @@ class PhRegPrv:
                 "Southern Leyte"
             ],
             "Zamboanga Peninsula": [
-                "Zamboanga del Norte",
-                "Zamboanga del Sur",
+                "Zamboanga Del Norte",
+                "Zamboanga Del Sur",
                 "Zamboanga Sibugay"
             ],
             "Northern Mindanao": [

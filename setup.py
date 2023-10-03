@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='psalpsdtools',
-      version='1.4',
+      version='1.5',
       description='PSA-LPSD Tools',
       packages=['psalpsdtools'],
       install_requires=[

@@ -1,16 +1,16 @@
-#from psalpsdtools import Edrw
-from Edrw import Edrw
+#from psalpsdtools import Edrw  # USE IF FROM LIBRARY
+from Edrw import Edrw           # USE IF FROM LOCAL
 
 # SET REGION TO PROCESS
-regName = "Central Visayas"
+regName = "All" # USE All for all regions or use specific region name
 # SET QUARTER, ALSO USED IN READING THE S-D FILE
 qtr = "Q2"
 # SET FOLDER OF SOURCES/FINAL FILES INCLUDING S-D FILE
 baseFolder = "C:/EDRW/Q2"
 # SET S-D FILE NAME
-sdFile = 'Duck_SD Q2 2023.xlsm'
+sdFile = 'Chicken Egg_SD Q2 2023.xlsm'
 # COMMODITY 08=chicken, 09=duck, etc.
-commcode = '09'
+commcode = '08a'
 # Year
 yr = '23'
 
